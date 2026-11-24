@@ -132,82 +132,6 @@ const CLASSES = [
       "fichier": "pdf/2nde/ch09-les-droites-du-plan/deroulement-droites-du-plan.pdf"
      }
     ]
-   },
-   {
-    "num": null,
-    "titre": "Algorithme",
-    "fichiers": [
-     {
-      "nom": "Cours 1 - Opérations et variables",
-      "fichier": "pdf/2nde/algorithme/cours-1-operations-et-variables.pdf"
-     },
-     {
-      "nom": "Cours 2 - Les fonctions",
-      "fichier": "pdf/2nde/algorithme/cours-2-les-fonctions.pdf"
-     },
-     {
-      "nom": "Cours 3 - Condition et boucle",
-      "fichier": "pdf/2nde/algorithme/cours-3-condition-et-boucle.pdf"
-     },
-     {
-      "nom": "Exercice 1 - Opérations et variables",
-      "fichier": "pdf/2nde/algorithme/exercice-1-operations-et-variables.pdf"
-     },
-     {
-      "nom": "Exercice 2 - Les fonctions",
-      "fichier": "pdf/2nde/algorithme/exercice-2-les-fonctions.pdf"
-     }
-    ]
-   },
-   {
-    "num": null,
-    "titre": "Automatisme",
-    "fichiers": [
-     {
-      "nom": "Automatisme 1 - Puissance",
-      "fichier": "pdf/2nde/automatisme/automatisme-1-puissance.pdf"
-     },
-     {
-      "nom": "Automatisme 2 - Racine carrée",
-      "fichier": "pdf/2nde/automatisme/automatisme-2-racine-carree.pdf"
-     },
-     {
-      "nom": "Automatisme 3 - Développement",
-      "fichier": "pdf/2nde/automatisme/automatisme-3-developpement.pdf"
-     },
-     {
-      "nom": "Automatisme 4 - Fraction",
-      "fichier": "pdf/2nde/automatisme/automatisme-4-fraction.pdf"
-     },
-     {
-      "nom": "Automatisme 5 - Equation",
-      "fichier": "pdf/2nde/automatisme/automatisme-5-equation.pdf"
-     },
-     {
-      "nom": "Automatisme 6 - Equation particulière",
-      "fichier": "pdf/2nde/automatisme/automatisme-6-equation-particuliere.pdf"
-     },
-     {
-      "nom": "Automatisme 7 - Inéquation",
-      "fichier": "pdf/2nde/automatisme/automatisme-7-inequation.pdf"
-     },
-     {
-      "nom": "Automatisme 8 - Etudes de variations - introduction",
-      "fichier": "pdf/2nde/automatisme/automatisme-8-etudes-de-variations-introduction.pdf"
-     },
-     {
-      "nom": "Automatisme 9 - Etudes de variations - suite",
-      "fichier": "pdf/2nde/automatisme/automatisme-9-etudes-de-variations-suite.pdf"
-     },
-     {
-      "nom": "Automatisme 10 - Initiation aux tableaux de signe",
-      "fichier": "pdf/2nde/automatisme/automatisme-10-initiation-aux-tableaux-de-signe.pdf"
-     },
-     {
-      "nom": "Automatisme 11 - Etudes de signes - suite",
-      "fichier": "pdf/2nde/automatisme/automatisme-11-etudes-de-signes-suite.pdf"
-     }
-    ]
    }
   ],
   "capytale": [
@@ -387,26 +311,6 @@ const CLASSES = [
      {
       "nom": "Déroulement VA réelles",
       "fichier": "pdf/1spe/ch09-variables-aleatoires-reelles/deroulement-va-reelles.pdf"
-     }
-    ]
-   },
-   {
-    "num": null,
-    "titre": "Programmation",
-    "fichiers": [
-     {
-      "nom": "Fiche programmation",
-      "fichier": "pdf/1spe/programmation/fiche-programmation.pdf"
-     }
-    ]
-   },
-   {
-    "num": null,
-    "titre": "Divers",
-    "fichiers": [
-     {
-      "nom": "Exercice sup",
-      "fichier": "pdf/1spe/divers/exercice-sup.pdf"
      }
     ]
    }
