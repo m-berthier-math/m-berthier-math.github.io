@@ -2,7 +2,7 @@
    CONTENU DU SITE — la seule partie à modifier.
    Pour chaque classe :
      cours    : chapitres -> liste de PDF (nom affiché + chemin du fichier)
-     capytale : chapitres -> liste de liens { nom, url, code, note (texte facultatif) }
+     capytale : chapitres -> liste de liens { nom, url, note (texte facultatif) }
    num : numéro du chapitre (null = rubrique sans numéro, ex. Automatismes)
    ============================================================ */
 const CLASSES = [
@@ -141,43 +141,35 @@ const CLASSES = [
     "liens": [
      {
       "nom": "Automatisme 1 - Puissance",
-      "url": "https://capytale2.ac-paris.fr/web/c/6dc0-11778352/mln",
-      "code": "6dc0-11778352"
+      "url": "https://capytale2.ac-paris.fr/web/c/6dc0-11778352/mln"
      },
      {
       "nom": "Automatisme 2 - Racine carrée",
-      "url": "https://capytale2.ac-paris.fr/web/c/c5bf-11937338/mln",
-      "code": "c5bf-11937338"
+      "url": "https://capytale2.ac-paris.fr/web/c/c5bf-11937338/mln"
      },
      {
       "nom": "Automatisme 3 - Calcul littéral",
-      "url": "https://capytale2.ac-paris.fr/web/c/d00c-11937514/mln",
-      "code": "d00c-11937514"
+      "url": "https://capytale2.ac-paris.fr/web/c/d00c-11937514/mln"
      },
      {
       "nom": "Automatisme 4 - Fractions",
-      "url": "https://capytale2.ac-paris.fr/web/c/8ab3-11937802/mln",
-      "code": "8ab3-11937802"
+      "url": "https://capytale2.ac-paris.fr/web/c/8ab3-11937802/mln"
      },
      {
       "nom": "Automatisme Expert 1",
-      "url": "https://capytale2.ac-paris.fr/web/c/3474-11937927/mln",
-      "code": "3474-11937927"
+      "url": "https://capytale2.ac-paris.fr/web/c/3474-11937927/mln"
      },
      {
       "nom": "Automatisme 5 - Équation",
-      "url": "https://capytale2.ac-paris.fr/web/c/305f-12686269/mln",
-      "code": "305f-12686269"
+      "url": "https://capytale2.ac-paris.fr/web/c/305f-12686269/mln"
      },
      {
       "nom": "Automatisme 6 - Inéquation",
-      "url": "https://capytale2.ac-paris.fr/web/c/598b-12928438/mln",
-      "code": "598b-12928438"
+      "url": "https://capytale2.ac-paris.fr/web/c/598b-12928438/mln"
      },
      {
       "nom": "Automatisme 7 - Équation et inéquation produit et quotient",
-      "url": "https://capytale2.ac-paris.fr/web/c/3ffc-12928583/mln",
-      "code": "3ffc-12928583"
+      "url": "https://capytale2.ac-paris.fr/web/c/3ffc-12928583/mln"
      }
     ]
    }
@@ -322,13 +314,11 @@ const CLASSES = [
     "liens": [
      {
       "nom": "Les exercices de base",
-      "url": "https://capytale2.ac-paris.fr/web/c/b811-11837943/mln",
-      "code": "b811-11837943"
+      "url": "https://capytale2.ac-paris.fr/web/c/b811-11837943/mln"
      },
      {
       "nom": "Exercices sans interactivité",
       "url": "https://capytale2.ac-paris.fr/web/c/c243-11838035/mln",
-      "code": "c243-11838035",
       "note": "Les exercices sont triés par ordre de priorité : les premiers sont plus simples et essentiels, les derniers plus complets (ou difficiles) mais moins prioritaires."
      }
     ]
@@ -600,18 +590,15 @@ const CLASSES = [
     "liens": [
      {
       "nom": "Sur les récurrences",
-      "url": "https://capytale2.ac-paris.fr/web/c/5529-11837126/mln",
-      "code": "5529-11837126"
+      "url": "https://capytale2.ac-paris.fr/web/c/5529-11837126/mln"
      },
      {
       "nom": "Sur les limites",
-      "url": "https://capytale2.ac-paris.fr/web/c/a1f7-11837145/mln",
-      "code": "a1f7-11837145"
+      "url": "https://capytale2.ac-paris.fr/web/c/a1f7-11837145/mln"
      },
      {
       "nom": "Pour aller plus loin",
       "url": "https://capytale2.ac-paris.fr/web/c/4a78-11837159/mln",
-      "code": "4a78-11837159",
       "note": "Dans l'ordre : des suites auxiliaires, un algorithme de seuil, puis des sujets type bac."
      }
     ]
@@ -623,7 +610,6 @@ const CLASSES = [
      {
       "nom": "Exercices avec coordonnées",
       "url": "https://capytale2.ac-paris.fr/web/c/12f8-12622988",
-      "code": "12f8-12622988",
       "note": "Il n'y a que des exercices avec coordonnées. L'exercice 7 n'est pas interactif."
      }
     ]
@@ -634,8 +620,7 @@ const CLASSES = [
     "liens": [
      {
       "nom": "Exercices sur les limites de fonctions",
-      "url": "https://capytale2.ac-paris.fr/web/c/d860-12114699/mln",
-      "code": "d860-12114699"
+      "url": "https://capytale2.ac-paris.fr/web/c/d860-12114699/mln"
      }
     ]
    },
@@ -645,8 +630,7 @@ const CLASSES = [
     "liens": [
      {
       "nom": "Exercices sur les fonctions composées",
-      "url": "https://capytale2.ac-paris.fr/web/c/1b61-12623028/mln",
-      "code": "1b61-12623028"
+      "url": "https://capytale2.ac-paris.fr/web/c/1b61-12623028/mln"
      }
     ]
    }
@@ -675,28 +659,23 @@ const CLASSES = [
     "liens": [
      {
       "nom": "Automatisme 1 - Comparer des nombres",
-      "url": "https://capytale2.ac-paris.fr/web/c/9c5e-11726469/mln",
-      "code": "9c5e-11726469"
+      "url": "https://capytale2.ac-paris.fr/web/c/9c5e-11726469/mln"
      },
      {
       "nom": "Automatisme 2 - Augmentation en pourcentage",
-      "url": "https://capytale2.ac-paris.fr/web/c/3b12-11889307/mln",
-      "code": "3b12-11889307"
+      "url": "https://capytale2.ac-paris.fr/web/c/3b12-11889307/mln"
      },
      {
       "nom": "Automatisme 3 - Probabilité",
-      "url": "https://capytale2.ac-paris.fr/web/c/c31f-12062849/mln",
-      "code": "c31f-12062849"
+      "url": "https://capytale2.ac-paris.fr/web/c/c31f-12062849/mln"
      },
      {
       "nom": "Automatisme 4 - Proportion",
-      "url": "https://capytale2.ac-paris.fr/web/c/711e-12242062/mln",
-      "code": "711e-12242062"
+      "url": "https://capytale2.ac-paris.fr/web/c/711e-12242062/mln"
      },
      {
       "nom": "Automatisme 5 - Fonctions",
-      "url": "https://capytale2.ac-paris.fr/web/c/17c0-12692858/mln",
-      "code": "17c0-12692858"
+      "url": "https://capytale2.ac-paris.fr/web/c/17c0-12692858/mln"
      }
     ]
    }
