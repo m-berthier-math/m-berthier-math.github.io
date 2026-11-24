@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cours de maths</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Sora:wght@600;700&display=swap">
+<style>
+/* VOICE: clair, rassurant, pensé pour des lycéens sur téléphone
+   IDEA: un classeur avec des intercalaires de couleur, une couleur par classe
+   PICTURE: la rangée d'intercalaires + les deux grands choix Cours / Capytale
+   COLOUR and TYPE: papier blanc quadrillé, une couleur franche par classe ; Sora + Atkinson Hyperlegible
+   LAYOUT: une colonne centrée, onglets en haut, chapitres en accordéon */
+:root{color-scheme:light dark;
+  --bg:light-dark(#f4f5f7,#121418);--paper:light-dark(#ffffff,#1b1e24);
+  --ink:light-dark(#16181d,#eef0f4);--soft:light-dark(#5b6170,#a3a9b6);
+  --line:light-dark(#e3e6ec,#2b3039);--grid:light-dark(#e9eef8,#1f242c);
+  --c:#2f6fd6}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 "Atkinson Hyperlegible",system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 max(4vw,14px)}
+header{background:var(--paper);border-bottom:1px solid var(--line);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:22px 22px}
+header .wrap{padding-top:clamp(24px,5vw,44px)}
+h1{font:700 clamp(30px,6vw,46px)/1.05 Sora,sans-serif;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--soft);margin:0 0 22px}
+nav{display:flex;gap:6px;overflow-x:auto;padding-top:4px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:none;font:700 16px Sora,sans-serif;border:0;cursor:pointer;min-height:48px;padding:10px 18px;
+  border-radius:12px 12px 0 0;background:color-mix(in srgb,var(--t) 16%,var(--paper));color:var(--ink);
+  border-top:4px solid var(--t);transform:translateY(6px);transition:transform .15s}
+nav button[aria-selected=true]{background:var(--t);color:#fff;transform:none}
+nav button:focus-visible,.choice:focus-visible,summary:focus-visible,.item:focus-visible{outline:3px solid var(--c);outline-offset:2px}
+main{padding:clamp(22px,4vw,40px) 0 60px}
+.bar{height:6px;background:var(--c);border-radius:3px;margin-bottom:24px}
+.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:28px}
+.choice{display:flex;align-items:center;gap:14px;text-align:left;cursor:pointer;font:inherit;color:var(--ink);
+  background:var(--paper);border:2px solid var(--line);border-radius:16px;padding:18px;min-height:96px}
+.choice svg{flex:none;width:46px;height:46px}
+.choice b{display:block;font:700 20px Sora,sans-serif}
+.choice span{color:var(--soft);font-size:15px}
+.choice[aria-pressed=true]{border-color:var(--c);background:color-mix(in srgb,var(--c) 9%,var(--paper))}
+h2{font:700 24px Sora,sans-serif;margin:0 0 14px}
+details{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:14px 16px;min-height:56px;font-weight:700}
+summary::-webkit-details-marker{display:none}
+.num{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:color-mix(in srgb,var(--c) 15%,var(--paper));color:var(--c);font:700 15px Sora,sans-serif}
+summary .count{margin-left:auto;color:var(--soft);font-weight:400;font-size:14px;white-space:nowrap}
+summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--soft);border-bottom:2px solid var(--soft);transform:rotate(45deg);margin:0 4px 4px 4px;transition:transform .15s}
+details[open] summary::after{transform:rotate(225deg);margin-bottom:-4px}
+ul{list-style:none;margin:0;padding:0 12px 12px}
+.item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;text-decoration:none;min-height:52px}
+.item:hover{background:color-mix(in srgb,var(--c) 8%,transparent)}
+.tag{flex:none;font-size:13px;font-weight:700;padding:3px 8px;border-radius:6px;background:var(--c);color:#fff}
+.tag.alt{background:transparent;color:var(--c);border:1.5px solid var(--c)}
+.item .go{margin-left:auto;color:var(--soft);font-size:14px;white-space:nowrap}
+.empty{background:var(--paper);border:1px dashed var(--line);border-radius:14px;padding:22px;color:var(--soft);text-align:center}
+footer{color:var(--soft);font-size:14px;text-align:center;padding:0 0 30px}
+@media(max-width:600px){nav{flex-wrap:wrap;gap:6px 4px}nav button{padding:8px 13px;font-size:15px;border-radius:12px;transform:none}.choices{grid-template-columns:1fr}.choice{min-height:76px}.item .go{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Cours de maths</h1>
+  <p class="sub">Choisis ta classe, puis les cours ou les activités Capytale.</p>
+  <nav id="tabs" role="tablist" aria-label="Classes"></nav>
+</div></header>
+<main class="wrap" id="main"></main>
+<footer>Contenus d'exemple : à remplacer par les vrais chapitres.</footer>
+
+<script>
+{
+/* ============================================================
+   CONTENU DU SITE — c'est la seule partie à modifier.
+   Pour chaque classe :
+     cours    : chapitres -> liste de PDF  (fichier = chemin du PDF)
+     capytale : chapitres -> liste de liens Capytale
+   ============================================================ */
+const CLASSES = [
+  { id:"seconde", nom:"2nde", couleur:"#2f6fd6",
+    cours:[
+      { titre:"Nombres et calculs", fichiers:[
+        { nom:"Cours", fichier:"pdf/2nde/ch1-cours.pdf" },
+        { nom:"Exercices", fichier:"pdf/2nde/ch1-exos.pdf" } ] },
+      { titre:"Fonctions de référence", fichiers:[
+        { nom:"Cours", fichier:"pdf/2nde/ch2-cours.pdf" },
+        { nom:"Exercices", fichier:"pdf/2nde/ch2-exos.pdf" } ] },
+      { titre:"Vecteurs", fichiers:[
+        { nom:"Cours", fichier:"pdf/2nde/ch3-cours.pdf" } ] }
+    ],
+    capytale:[
+      { titre:"Python : premiers pas", liens:[
+        { nom:"Variables et affectations", url:"https://capytale2.ac-paris.fr/web/c/0000-000001" },
+        { nom:"Instructions conditionnelles", url:"https://capytale2.ac-paris.fr/web/c/0000-000002" } ] },
+      { titre:"Fonctions de référence", liens:[
+        { nom:"Tracer une fonction avec Python", url:"https://capytale2.ac-paris.fr/web/c/0000-000003" } ] }
+    ] },
+  { id:"premiere-spe", nom:"1re Spé", couleur:"#d6452f",
+    cours:[
+      { titre:"Second degré", fichiers:[
+        { nom:"Cours", fichier:"pdf/1spe/ch1-cours.pdf" },
+        { nom:"Exercices", fichier:"pdf/1spe/ch1-exos.pdf" } ] },
+      { titre:"Suites numériques", fichiers:[
+        { nom:"Cours", fichier:"pdf/1spe/ch2-cours.pdf" },
+        { nom:"Exercices", fichier:"pdf/1spe/ch2-exos.pdf" } ] }
+    ],
+    capytale:[
+      { titre:"Suites numériques", liens:[
+        { nom:"Calculer les termes d'une suite", url:"https://capytale2.ac-paris.fr/web/c/0000-000004" } ] }
+    ] },
+  { id:"terminale-spe", nom:"Tle Spé", couleur:"#0f8a7a", cours:[], capytale:[] },
+  { id:"premiere-stmg", nom:"1re STMG", couleur:"#c97c00",
+    cours:[
+      { titre:"Pourcentages et évolutions", fichiers:[
+        { nom:"Cours", fichier:"pdf/1stmg/ch1-cours.pdf" },
+        { nom:"Exercices", fichier:"pdf/1stmg/ch1-exos.pdf" } ] }
+    ],
+    capytale:[] },
+  { id:"terminale-stmg", nom:"Tle STMG", couleur:"#c43d7a", cours:[], capytale:[] }
+];
+/* ============================ fin du contenu ============================ */
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const tabs = document.getElementById("tabs");
+const main = document.getElementById("main");
+const icoCours = '<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="var(--c)" opacity=".18"/><rect x="9" y="5" width="30" height="38" rx="4" fill="none" stroke="var(--c)" stroke-width="2.5"/><path d="M16 16h16M16 23h16M16 30h10" stroke="var(--c)" stroke-width="2.5" stroke-linecap="round"/></svg>';
+const icoCapy = '<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="38" height="30" rx="5" fill="var(--c)" opacity=".18"/><rect x="5" y="9" width="38" height="30" rx="5" fill="none" stroke="var(--c)" stroke-width="2.5"/><path d="M15 20l5 4-5 4M24 29h9" stroke="var(--c)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>';
+
+function read(){
+  const h = location.hash.slice(1);
+  let [cid, vue] = [h.replace(/-(cours|capytale)$/,""), (h.match(/-(cours|capytale)$/)||[])[1]];
+  if(!CLASSES.some(c=>c.id===cid)){ try{ cid = localStorage.getItem("classe") || ""; }catch(e){} }
+  if(!CLASSES.some(c=>c.id===cid)) cid = CLASSES[0].id;
+  return { cid, vue: vue || "cours" };
+}
+function go(cid, vue){ location.hash = cid + "-" + vue; }
+
+function render(){
+  const { cid, vue } = read();
+  const cl = CLASSES.find(c=>c.id===cid);
+  try{ localStorage.setItem("classe", cid); }catch(e){}
+  document.documentElement.style.setProperty("--c", cl.couleur);
+
+  tabs.innerHTML = CLASSES.map(c =>
+    `<button role="tab" style="--t:${esc(c.couleur)}" data-c="${esc(c.id)}" aria-selected="${c.id===cid}">${esc(c.nom)}</button>`).join("");
+
+  const chap = vue === "cours" ? cl.cours : cl.capytale;
+  const nb = (l) => l.length + (l.length > 1 ? " chapitres" : " chapitre");
+  let html = `<div class="bar"></div>
+  <div class="choices">
+    <button class="choice" data-v="cours" aria-pressed="${vue==="cours"}">${icoCours}<div><b>Cours</b><span>Cours et exercices en PDF · ${nb(cl.cours)}</span></div></button>
+    <button class="choice" data-v="capytale" aria-pressed="${vue==="capytale"}">${icoCapy}<div><b>Capytale</b><span>Activités en ligne · ${nb(cl.capytale)}</span></div></button>
+  </div>
+  <h2>${vue==="cours" ? "Cours" : "Activités Capytale"} · ${esc(cl.nom)}</h2>`;
+
+  if(!chap.length){
+    html += `<div class="empty">Rien pour l'instant : les chapitres arriveront au fil de l'année.</div>`;
+  } else {
+    html += chap.map((ch, i) => {
+      const items = vue === "cours" ? ch.fichiers : ch.liens;
+      const lis = items.map(it => {
+        const href = vue === "cours" ? it.fichier : it.url;
+        const isExo = /exo|exercice/i.test(it.nom);
+        const tag = vue === "cours" ? `<span class="tag${isExo?" alt":""}">PDF</span>` : `<span class="tag">Capytale</span>`;
+        return `<li><a class="item" href="${esc(href)}" target="_blank" rel="noopener">${tag}<span>${esc(it.nom)}</span><span class="go">${vue==="cours"?"Ouvrir le PDF":"Ouvrir l'activité"} ↗</span></a></li>`;
+      }).join("");
+      return `<details${chap.length===1?" open":""}><summary><span class="num">${i+1}</span><span>${esc(ch.titre)}</span><span class="count">${items.length} ${vue==="cours"?"fichier":"lien"}${items.length>1?"s":""}</span></summary><ul>${lis}</ul></details>`;
+    }).join("");
+  }
+  main.innerHTML = html;
+}
+
+tabs.addEventListener("click", e => { const b = e.target.closest("button[data-c]"); if(b) go(b.dataset.c, read().vue); });
+main.addEventListener("click", e => { const b = e.target.closest(".choice"); if(b) go(read().cid, b.dataset.v); });
+tabs.addEventListener("keydown", e => {
+  if(e.key!=="ArrowRight" && e.key!=="ArrowLeft") return;
+  const i = CLASSES.findIndex(c=>c.id===read().cid);
+  const n = (i + (e.key==="ArrowRight"?1:-1) + CLASSES.length) % CLASSES.length;
+  go(CLASSES[n].id, read().vue);
+  requestAnimationFrame(()=>tabs.querySelector(`[data-c="${CLASSES[n].id}"]`)?.focus());
+});
+window.addEventListener("hashchange", render);
+render();
+}
+</script>
+</body>
+</html>
