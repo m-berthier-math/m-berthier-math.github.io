@@ -136,6 +136,16 @@ const CLASSES = [
   ],
   "capytale": [
    {
+    "num": 3,
+    "titre": "Fonctions de référence",
+    "liens": [
+     {
+      "nom": "Révisions - Fonctions de référence",
+      "url": "https://capytale2.ac-paris.fr/web/c/c06e-13122665/mln"
+     }
+    ]
+   },
+   {
     "num": null,
     "titre": "Automatismes",
     "liens": [
@@ -170,6 +180,10 @@ const CLASSES = [
      {
       "nom": "Automatisme 7 - Équation et inéquation produit et quotient",
       "url": "https://capytale2.ac-paris.fr/web/c/3ffc-12928583/mln"
+     },
+     {
+      "nom": "Automatisme Expert 2",
+      "url": "https://capytale2.ac-paris.fr/web/c/9345-13122213/mln"
      }
     ]
    }
@@ -320,6 +334,16 @@ const CLASSES = [
       "nom": "Exercices sans interactivité",
       "url": "https://capytale2.ac-paris.fr/web/c/c243-11838035/mln",
       "note": "Les exercices sont triés par ordre de priorité : les premiers sont plus simples et essentiels, les derniers plus complets (ou difficiles) mais moins prioritaires."
+     }
+    ]
+   },
+   {
+    "num": 3,
+    "titre": "Suite",
+    "liens": [
+     {
+      "nom": "Révisions - Suites",
+      "url": "https://capytale2.ac-paris.fr/web/c/583e-13122993/mln"
      }
     ]
    }
