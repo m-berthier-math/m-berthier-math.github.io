@@ -3,6 +3,8 @@
    Pour chaque classe :
      cours    : chapitres -> liste de PDF (nom affiché + chemin du fichier)
      capytale : chapitres -> liste de liens { nom, url, note (texte facultatif) }
+                ou, pour des sous-dossiers : groupes -> [ { titre, intro (facultatif), liens } ]
+                un lien peut viser un PDF du site avec "fichier" au lieu de "url"
    num : numéro du chapitre (null = rubrique sans numéro, ex. Automatismes)
    ============================================================ */
 const CLASSES = [
@@ -148,42 +150,57 @@ const CLASSES = [
    {
     "num": null,
     "titre": "Automatismes",
-    "liens": [
+    "groupes": [
      {
-      "nom": "Automatisme 1 - Puissance",
-      "url": "https://capytale2.ac-paris.fr/web/c/6dc0-11778352/mln"
+      "titre": "Parcours 1",
+      "liens": [
+       {
+        "nom": "Automatisme 1 - Puissance",
+        "url": "https://capytale2.ac-paris.fr/web/c/6dc0-11778352/mln"
+       },
+       {
+        "nom": "Automatisme 2 - Racine carrée",
+        "url": "https://capytale2.ac-paris.fr/web/c/c5bf-11937338/mln"
+       },
+       {
+        "nom": "Automatisme 3 - Calcul littéral",
+        "url": "https://capytale2.ac-paris.fr/web/c/d00c-11937514/mln"
+       },
+       {
+        "nom": "Automatisme 4 - Fractions",
+        "url": "https://capytale2.ac-paris.fr/web/c/8ab3-11937802/mln"
+       },
+       {
+        "nom": "Automatisme Expert 1",
+        "url": "https://capytale2.ac-paris.fr/web/c/3474-11937927/mln"
+       }
+      ]
      },
      {
-      "nom": "Automatisme 2 - Racine carrée",
-      "url": "https://capytale2.ac-paris.fr/web/c/c5bf-11937338/mln"
-     },
-     {
-      "nom": "Automatisme 3 - Calcul littéral",
-      "url": "https://capytale2.ac-paris.fr/web/c/d00c-11937514/mln"
-     },
-     {
-      "nom": "Automatisme 4 - Fractions",
-      "url": "https://capytale2.ac-paris.fr/web/c/8ab3-11937802/mln"
-     },
-     {
-      "nom": "Automatisme Expert 1",
-      "url": "https://capytale2.ac-paris.fr/web/c/3474-11937927/mln"
-     },
-     {
-      "nom": "Automatisme 5 - Équation",
-      "url": "https://capytale2.ac-paris.fr/web/c/305f-12686269/mln"
-     },
-     {
-      "nom": "Automatisme 6 - Inéquation",
-      "url": "https://capytale2.ac-paris.fr/web/c/598b-12928438/mln"
-     },
-     {
-      "nom": "Automatisme 7 - Équation et inéquation produit et quotient",
-      "url": "https://capytale2.ac-paris.fr/web/c/3ffc-12928583/mln"
-     },
-     {
-      "nom": "Automatisme Expert 2",
-      "url": "https://capytale2.ac-paris.fr/web/c/9345-13122213/mln"
+      "titre": "Parcours 2",
+      "intro": "La fiche méthode de ce parcours explique comment les automatismes 5, 6 et 7 interviennent dans un problème. Vous y trouverez une méthode détaillée pour bien démarrer les automatismes 6 et 7.",
+      "liens": [
+       {
+        "nom": "Fiche méthode parcours 2",
+        "fichier": "pdf/2nde/automatismes/fiche-methode-parcours-2.pdf"
+       },
+       {
+        "nom": "Automatisme 5 - Équation",
+        "url": "https://capytale2.ac-paris.fr/web/c/305f-12686269/mln"
+       },
+       {
+        "nom": "Automatisme 6 - Inéquation",
+        "url": "https://capytale2.ac-paris.fr/web/c/598b-12928438/mln"
+       },
+       {
+        "nom": "Automatisme 7 - Équation et inéquation produit et quotient",
+        "url": "https://capytale2.ac-paris.fr/web/c/3ffc-12928583/mln"
+       },
+       {
+        "nom": "Automatisme Expert 2",
+        "url": "https://capytale2.ac-paris.fr/web/c/9345-13122213/mln"
+       }
+      ]
      }
     ]
    }

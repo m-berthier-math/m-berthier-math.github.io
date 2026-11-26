@@ -61,6 +61,11 @@ ul{list-style:none;margin:0;padding:0 12px 12px}
 h3.sep{font:700 15px Sora,sans-serif;color:var(--soft);margin:26px 0 10px}
 .txt{flex:1;display:flex;flex-direction:column;gap:2px}
 .note{color:var(--soft);font-size:14px;line-height:1.4}
+.groups{padding:0 12px 12px}
+details.parcours{background:color-mix(in srgb,var(--c) 5%,var(--paper));border-left:4px solid var(--c);border-radius:10px;margin:0 0 8px}
+details.parcours summary{min-height:48px;padding:10px 14px}
+details.parcours ul{padding:0 8px 8px}
+.intro{margin:0 14px 8px;padding:10px 12px;border-radius:8px;background:var(--paper);border:1px solid var(--line);font-size:15px;line-height:1.45}
 .empty{background:var(--paper);border:1px dashed var(--line);border-radius:14px;padding:22px;color:var(--soft);text-align:center}
 footer{color:var(--soft);font-size:14px;text-align:center;padding:0 0 30px}
 @media(max-width:600px){nav{flex-wrap:wrap;gap:6px 4px}nav button{padding:8px 13px;font-size:15px;border-radius:12px;transform:none}.choices{grid-template-columns:1fr}.choice{min-height:76px}.item .go{display:none}}
@@ -121,15 +126,27 @@ function render(){
       let pre = "";
       if(ch.num == null && !sep && chap.some(c=>c.num != null)){ sep = true; pre = `<h3 class="sep">Autres ressources</h3>`; }
       const badge = ch.num != null ? ch.num : esc(ch.titre.charAt(0));
-      const items = vue === "cours" ? ch.fichiers : ch.liens;
-      const lis = items.map(it => {
-        const href = vue === "cours" ? it.fichier : it.url;
+      const li = it => {
+        const pdf = vue === "cours" || !!it.fichier;
+        const href = it.fichier || it.url;
         const isExo = /exo|exercice/i.test(it.nom);
-        const tag = vue === "cours" ? `<span class="tag${isExo?" alt":""}">PDF</span>` : `<span class="tag">Capytale</span>`;
+        const tag = pdf ? `<span class="tag${isExo?" alt":""}">PDF</span>` : `<span class="tag">Capytale</span>`;
         const extra = (it.note ? `<small class="note">${esc(it.note)}</small>` : "");
-        return `<li><a class="item" href="${esc(href)}" target="_blank" rel="noopener">${tag}<span class="txt">${esc(it.nom)}${extra}</span><span class="go">${vue==="cours"?"Ouvrir le PDF":"Ouvrir l'activité"} ↗</span></a></li>`;
-      }).join("");
-      return pre + `<details${chap.length===1?" open":""}><summary><span class="num${ch.num==null?" alt":""}">${badge}</span><span>${esc(ch.titre)}</span><span class="count">${items.length} ${vue==="cours"?"fichier":"lien"}${items.length>1?"s":""}</span></summary><ul>${lis}</ul></details>`;
+        return `<li><a class="item" href="${esc(href)}" target="_blank" rel="noopener">${tag}<span class="txt">${esc(it.nom)}${extra}</span><span class="go">${pdf?"Ouvrir le PDF":"Ouvrir l'activité"} ↗</span></a></li>`;
+      };
+      const plural = (n, w) => `${n} ${w}${n>1?"s":""}`;
+      const unit = vue === "cours" ? "fichier" : "lien";
+      let body, n;
+      if(ch.groupes){
+        n = ch.groupes.reduce((s, g) => s + g.liens.length, 0);
+        body = `<div class="groups">` + ch.groupes.map(g =>
+          `<details class="parcours"><summary><span>${esc(g.titre)}</span><span class="count">${plural(g.liens.length, unit)}</span></summary>${g.intro ? `<p class="intro">${esc(g.intro)}</p>` : ""}<ul>${g.liens.map(li).join("")}</ul></details>`).join("") + `</div>`;
+      } else {
+        const items = vue === "cours" ? ch.fichiers : ch.liens;
+        n = items.length;
+        body = `<ul>${items.map(li).join("")}</ul>`;
+      }
+      return pre + `<details${chap.length===1?" open":""}><summary><span class="num${ch.num==null?" alt":""}">${badge}</span><span>${esc(ch.titre)}</span><span class="count">${plural(n, unit)}</span></summary>${body}</details>`;
     }).join("");
   }
   main.innerHTML = html;

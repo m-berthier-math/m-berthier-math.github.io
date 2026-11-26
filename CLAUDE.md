@@ -15,6 +15,8 @@ seconde → 2nde · premiere-spe → 1re Spé · terminale-spe → Tle Spé · p
 ## Format des données
 - Cours : `{ "num": 3, "titre": "Limites de fonctions", "fichiers": [ { "nom": "Cours - Limites de fonctions", "fichier": "pdf/tspe/ch03-limites-de-fonctions/cours-limites-de-fonctions.pdf" } ] }`
 - Capytale : `{ "num": 1, "titre": "Second degré", "liens": [ { "nom": "Les exercices de base", "url": "https://capytale2.ac-paris.fr/web/c/xxxx-xxxxxxxx/mln", "note": "texte facultatif affiché sous le lien" } ] }`
+- Sous-dossiers Capytale : `"groupes": [ { "titre": "Parcours 1", "intro": "texte facultatif en tête", "liens": [ … ] } ]` à la place de `"liens"` (ex. Automatismes en 2nde).
+- Un lien Capytale peut viser un PDF du site avec `"fichier"` au lieu de `"url"` (affiché avec l'étiquette PDF). Les PDF hors chapitre vont dans `pdf/<classe>/<rubrique>/` (ex. `pdf/2nde/automatismes/`).
 - `num: null` = rubrique sans numéro (ex. « Annale bac », « Automatismes »), affichée après les chapitres.
 
 ## Règles
