@@ -450,8 +450,8 @@ const CLASSES = [
     "titre": "Continuité des fonctions",
     "fichiers": [
      {
-      "nom": "Cours - Continuité sur les fonctions",
-      "fichier": "pdf/tspe/ch06-continuite-des-fonctions/cours-continuite-sur-les-fonctions.pdf"
+      "nom": "Cours - Continuité des fonctions",
+      "fichier": "pdf/tspe/ch06-continuite-des-fonctions/cours-continuite-des-fonctions.pdf"
      },
      {
       "nom": "Exercice - continuité sur les fonctions",
